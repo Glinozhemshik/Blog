@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Поиск</h1>
+    <div class="container">
+        <p>{{ founded.count }}</p>
+        {% for search in founded %}
+    <p> {{ search.title }}</p>
+
+        {% endfor %}
+    </div>
+
+
+{% endblock %}

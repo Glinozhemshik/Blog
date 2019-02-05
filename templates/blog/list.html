@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for statyas in statya %}
+                <div class="col-md-4">
+                    <h2><a class="text-dark" href="{% url "single" slug=statyas.slug %}">{{ statyas.title }}</a></h2>
+                    {% if statyas.picture %}
+                        <a href="#"><img style="width: 300px; height: 300px;"
+                                                                    src="{{ MEDIA_URL }}{{ statyas.picture.url }}"
+                                                                    alt="">
+                        </a>
+                    {% endif %}
+                    <p>{{ statyas.text }}</p>
+                    <p><a class="btn btn-primary" href="#"
+
+                          role="button"> Читать далее »</a></p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="container">
+            <div class="paginator-div">
+                <div class="col-12 justify-content-center">
+{#                    {% bootstrap_pagination news %}#}
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .pagination {
+            justify-content: center;
+        }
+    </style>
+{% endblock %}
+

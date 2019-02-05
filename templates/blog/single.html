@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h2>{{ ragnarek.title }}</h2>
+        </div>
+            <h1>{{ ragnarek.text }}</h1>
+        <div class="row">
+            <p class="text-dark">просмотров:{{ ragnarek.prosmotry }}</p>
+        </div>
+        <div class="row">
+            {% if ragnarek.picture %}
+                <img style="width: 300px; height: 300px;" src="{{ MEDIA_URL }}{{ ragnarek.picture.url }}" alt="">
+            {% endif %}
+        </div>
+        <div class="row">{{ statya }}</div>
+    </div>
+{% endblock %}
+
+
+
+
+
